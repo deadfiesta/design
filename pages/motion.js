@@ -1,6 +1,6 @@
 const motion = () => {
   return (
-    <div>motion</div>
+    <div>Motion testing</div>
   )
 }
 
