@@ -1,0 +1,70 @@
+.layout {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.nav {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 64px;
+  align-items: center;
+  color: var(--font-primary);
+  padding: 16px 64px;
+  border-bottom: 1px solid var(--divider-primary);
+}
+
+.active {
+  color: var(--font-blue);
+}
+
+.branding {
+  flex: 1;
+}
+
+.bodyContent {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.motion {
+  --gap: 40px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--gap);
+  padding: 64px;
+}
+
+.title {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+}
+
+.title a {
+  color: var(--font-blue);
+}
+
+.innerContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--gap);
+}
+
+.principle {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--gap);
+}
+
+.exampleContainer {
+  min-height: 240px;
+  flex: 1 1;
+  background-color: var(--bg-secondary);
+}
+
+.textContainer {
+  flex: 1 1;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 16px;
+}
