@@ -2,6 +2,7 @@ import Motion from '../../styles/Motion.module.css'
 import Header from '../motion/Header'
 import Section from '../motion/Section'
 import Principle from '../motion/Principle'
+import WhySpring from './WhySpring'
 
 const Content = () => {
   return (
@@ -27,6 +28,9 @@ const Content = () => {
       <hr />
       <Section
         title="Why Spring Animations">
+          <WhySpring
+          id="spring"
+          paragraph="" />
       </Section>
     </div>
   )
