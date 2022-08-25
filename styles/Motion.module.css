@@ -8,7 +8,7 @@
   flex-flow: row wrap;
   column-gap: 64px;
   align-items: center;
-  color: var(--font-primary);
+  color: inherit;
   padding: 16px 40px;
   border-bottom: 1px solid var(--divider-primary);
 }
@@ -33,6 +33,8 @@
 }
 
 .menuPrimary {
+  position: sticky;
+  top: 0;
   color: var(--font-primary);
   padding: 16px 24px;
 }
