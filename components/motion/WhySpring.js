@@ -1,4 +1,5 @@
 import React from 'react'
+import Motion from '../../styles/Motion.module.css'
 
 const WhySpring = ({ id, title, paragraph }) => {
   return (
