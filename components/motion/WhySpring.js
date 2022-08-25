@@ -1,7 +1,7 @@
 import React from 'react'
 import Motion from '../../styles/Motion.module.css'
 
-const WhySpring = ({ id, title, paragraph }) => {
+const WhySpring = ({ id, title, paragraph, example }) => {
   return (
     <div id={id} className={Motion.principle} >
     <div className={Motion.textContainer}>
