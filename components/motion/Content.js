@@ -55,9 +55,9 @@ const Content = () => {
                 Spring animations are widely adopted in native apps on Android and iOS. Physics-based animation frameworks are also becoming increasingly popular on web due to its flexibility and powerful interpolation to create life-like animation. With spring animation, movements look and feel natural by default. Consistency of motion becomes easier to manage and promote fluid interactivity.
               </p>
               <p>
-                Click <a rel="noreferrer" href="https://medium.com/kaliberinteractive/how-i-transitioned-from-ease-to-spring-animations-5a09eeca0325" rel="noopener" target="_blank">here</a> to find out more about spring animation
+                Click <a rel="noreferrer" href="https://medium.com/kaliberinteractive/how-i-transitioned-from-ease-to-spring-animations-5a09eeca0325" target="_blank">here</a> to find out more about spring animation
                 <br />
-                Click <a rel="noreferrer" href="https://www.digitalocean.com/community/tutorials/react-intro-to-react-spring" rel="noopener" target="_blank">here</a> to learn about React Spring framework
+                Click <a rel="noreferrer" href="https://www.digitalocean.com/community/tutorials/react-intro-to-react-spring" target="_blank">here</a> to learn about React Spring framework
               </p>
             </>
           } />
