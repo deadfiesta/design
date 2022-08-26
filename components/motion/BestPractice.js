@@ -27,7 +27,7 @@ const BestPractice = ({ id, title, description, doo, dooExample, dont, dontExamp
             {dontExample}
           </div>
           <hr className={Motion.doDontBar} />
-          <h4>Don't</h4>
+          <h4>Don&apos;t</h4>
           <p>{dont}</p>
         </li>
       </ul>
