@@ -14,7 +14,7 @@ const Navbar = ({ current }) => {
           { title: "Developer", anchor: "developer" },
           { title: "Resources", anchor: "resources" }
         ].map((menu, i) => (
-          <div className={menu.title === current  ? `${Motion.active}` : "menuItem"} key={menu.title + i}> <a href={`/motion/${menu.anchor}`}>{menu.title}</a></div>
+          <div className={menu.title === current  ? `${Motion.active}` : "menuItem"} key={menu.title + i}> <a rel="noreferrer" href={`/motion/${menu.anchor}`}>{menu.title}</a></div>
         ))}
       </ul>
     </nav>

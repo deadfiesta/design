@@ -7,7 +7,7 @@ const BestPractice = ({ id, title, description, doo, dooExample, dont, dontExamp
   const [number, setNumber] = useState(null)
   useEffect(()=> {
     num && setNumber(Number(1 + Array.from(item.current.parentNode.children).indexOf(item.current)))
-  })
+  }, [num, number, setNumber])
   return (
     <div ref={item} className={Motion.bestPractice}>
       <div id={id} className={Motion.anchor} />
