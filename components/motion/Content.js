@@ -74,7 +74,7 @@ const Content = () => {
         <Principle
           id="loading"
           title="Loading and Progress"
-          paragraph="Loading and progress animation informs the user through visual representation of where they are in the process and what’s happening. Loading animation assures the user that the content is still being loaded despite the page looking empty."
+          paragraph="Loading and progress animation informs the user through visual representation of where they are in the process and what&apos;s happening. Loading animation assures the user that the content is still being loaded despite the page looking empty."
           example={<SpinnerCircle />}
           label={"Loop Demo: Spinner (Indeterminate)"} />
         <Principle
