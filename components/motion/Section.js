@@ -1,8 +1,9 @@
-import Motion from '../../styles/Motion.module.css'
+import Motion from '../../styles/Motion.module.scss'
 
-const Section = ({ title, subtitle, children }) => {
+const Section = ({ id, title, subtitle, children }) => {
   return (
-    <section>
+    <section className={Motion.section}>
+      <div id={id} className={Motion.anchor} />
       <div className={Motion.title}>
         <h2>{title}</h2>
         <p>{subtitle}</p>

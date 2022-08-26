@@ -1,14 +1,18 @@
-import Motion from '../../styles/Motion.module.css'
+import Motion from '../../styles/Motion.module.scss'
 
-const Principle = ({ title, paragraph, example, id }) => {
+const Principle = ({ title, paragraph, example, label, id }) => {
   return (
-    <div id={id} className={Motion.principle} >
+    <div className={Motion.principle} >
+      <div id={id} className={Motion.anchor} />
       <div className={Motion.textContainer}>
         <h3>{title}</h3>
         <p>{paragraph}</p>
       </div>
       <div className={Motion.exampleContainer}>
         {example}
+        <div className={Motion.exampleLabel}>
+          {label}
+        </div>
       </div>
     </div>
   )

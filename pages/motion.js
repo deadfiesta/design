@@ -14,7 +14,7 @@ const motion = () => {
       </Head>
       <PageLayout
         sidemenu={<Sidemenu />}
-        nav={<Navbar />}
+        nav={<Navbar current="Home" />}
         main={<Content />} />
     </>
   )

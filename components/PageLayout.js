@@ -1,4 +1,4 @@
-import Motion from '../styles/Motion.module.css'
+import Motion from '../styles/Motion.module.scss'
 
 const PageLayout = ({ nav, sidemenu, main, footer }) => {
   return (

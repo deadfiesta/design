@@ -1,0 +1,53 @@
+@mixin dark {
+  --color-scheme: dark;
+  --font-primary: #fff;
+  --font-secondary: #7e8086;
+  --font-tertiary: #4f535a;
+  --font-disabled: #272B35;
+  --font-blue: #1b92f5;
+  --divider-primary: #272b35;
+  --divider-secondary: #373b44;
+  --bg-primary: #141923;
+  --bg-secondary: #1b202a;
+  --bg-tertiary: #20252e;
+  --bg-forth: #272b35;
+  --bg-fifth: #373b44;
+  --tint-deepblue: #fff;
+  --tint-red: #F5222D;
+  --tint-green: #16C42A;
+  --shadow-light: rgba(0, 0, 0, 0);
+}
+
+@mixin light {
+  --color-scheme: normal;
+  --font-primary: #293449;
+  --font-secondary: #5e6776;
+  --font-tertiary: #9499a4;
+  --font-disabled: #C9CCD1;
+  --font-blue: #1b92f5;
+  --divider-primary: #e7e9eb;
+  --divider-secondary: #adb2ba;
+  --bg-primary: #fff;
+  --bg-secondary: #f2f3f4;
+  --bg-tertiary: #e8e9eb;
+  --bg-forth: #c9ccd1;
+  --bg-fifth: #293449;
+  --tint-deepblue: #000084;
+  --tint-red: #F5222D;
+  --tint-green: #16C42A;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+}
+
+:root {
+  @include light;
+  // @media (prefers-color-scheme: dark) {
+  //   @include dark;
+  // }
+}
+
+.dark {
+  @include dark
+}
+.light {
+  @include light
+}
