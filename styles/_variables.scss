@@ -40,9 +40,6 @@
 
 :root {
   @include light;
-  // @media (prefers-color-scheme: dark) {
-  //   @include dark;
-  // }
 }
 
 .dark {

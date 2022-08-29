@@ -7,7 +7,7 @@ import SpinnerCircle from './components/SpinnerCircle'
 import SwitchLightDark from './components/SwitchLightDark'
 //Why Spring 
 import WhySpring from './WhySpring'
-import MenuOpen from './components/MenuOpen'
+import MenuOpen from './components/MenuOpenSampleCrazy'
 import BestPractice from './BestPractice'
 
 

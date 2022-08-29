@@ -16,7 +16,7 @@ const SwitchLightDark = () => {
     scale: dark ? 0 : 1.05,
     config: { mass: .3, friction: 18 }
   })
-
+  
   const sunAnim = useSpring({
     transform: dark ? "rotate(180deg)" : "rotate(0deg)",
     config: { mass: .35, tension: 240, friction: 24 }
