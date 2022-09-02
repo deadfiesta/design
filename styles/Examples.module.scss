@@ -1,3 +1,5 @@
+@import "../styles/_functions";
+
 .example {
   position: absolute;
   top: 50%;
@@ -104,7 +106,7 @@
     place-items: center;
     gap: 0.5rem;
     border-radius: 24px;
-    transition: background-color .2s ease;
+    transition: background-color 0.2s ease;
     &:hover {
       background-color: var(--bg-tertiary);
     }
@@ -119,7 +121,7 @@
       width: 32px;
     }
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -144,14 +146,14 @@
   }
   .menuSvg {
     @extend .gridCenter;
-    padding: .5rem;
-    &:hover{
+    padding: 0.5rem;
+    &:hover {
       &:before {
         background-color: var(--bg-tertiary);
       }
     }
     &:before {
-      content: '';
+      content: "";
       z-index: -1;
       position: absolute;
       top: 50%;
@@ -163,7 +165,7 @@
       border-radius: 50%;
     }
     > svg {
-      transform: scale(2)
+      transform: scale(2);
     }
   }
   .confused {
@@ -185,7 +187,7 @@
     }
   }
   .active {
-    color: var(--font-blue)
+    color: var(--font-blue);
   }
   .bowling {
     transform: rotate(-160deg) translateY(58px);
@@ -210,5 +212,223 @@
     > svg {
       transform: rotate(10deg);
     }
+  }
+}
+
+.springDemo {
+  $thumbSize: .75rem;
+  $thumbColor: var(--font-secondary);
+  $thumbHover: var(--font-blue);
+  $sliderBg: var(--bg-tertiary);
+
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-flow: row-reverse;
+  background-color: var(--bg-secondary);
+  @include responsive {
+    gap: 1.5rem;
+    padding: 1rem;
+    flex-flow: column-reverse nowrap;
+  }
+  .blue {
+    color: var(--font-blue) !important;
+  }
+  input[type="range"] {
+    -webkit-appearance: none; //remove default
+    background: transparent; //remove default
+    width: 100%;
+    height: $thumbSize;
+    &:focus {
+      outline: none;
+    }
+    &:focus:--webkit-slider-runnable-track {
+      background-color: var(--font-blue)
+    }
+    &::-webkit-slider-thumb {
+      //webkit thumb
+      -webkit-appearance: none; //remove default
+      background-color: $thumbColor;
+      height: $thumbSize;
+      width: $thumbSize;
+      border-radius: calc($thumbSize/2);
+      transform: translateY(calc($thumbSize/-3));
+      cursor: pointer;
+      transition: all .15s ease;
+      &:hover {
+        background-color: $thumbHover;
+      }
+    }
+    &::-moz-range-thumb {
+      //firefox
+      background-color: $thumbColor;
+      height: $thumbSize;
+      width: $thumbSize;
+      border-radius: calc($thumbSize/2);
+      border: none;
+      cursor: pointer;
+      &:hover {
+        background-color: $thumbHover;
+      }
+    }
+    &::-ms-thumb {
+      // ie
+      background-color: $thumbColor;
+      height: $thumbSize;
+      width: $thumbSize;
+      border-radius: calc($thumbSize/2);
+      margin: 0;
+      cursor: pointer;
+      &:hover {
+        background-color: $thumbHover;
+      }
+    }
+    &::-ms-track {
+      width: 100%;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+      width: 100%;
+      height: 4px;
+    }
+    &::-ms-fill-lower {
+      background-color: $sliderBg;
+    }
+    &::-ms-fill-upper {
+      background-color: $sliderBg;
+    }
+    &::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 4px;
+      background-color: $sliderBg;
+      border-radius: calc($thumbSize/2)
+    }
+    &::-moz-range-track {
+      width: 100%;
+      height: 4px;
+      background-color: $sliderBg;
+      border-radius: calc($thumbSize/2)
+    }
+  }
+  .controllerContainer, .demoContainer {
+    width: 100%;
+    flex: 1 1;
+    display: grid;
+    place-items: center;
+  }
+  .controllerInputContainer {
+    width: 100%;
+  }
+  .controllerOption {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .controllerOptionList {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    @include responsive {
+      width: 70%;
+    }
+  }
+  .controllerIconContainer {
+    border-radius: .25rem;
+  }
+  .controllerIcon {
+    width: 2.25rem;
+    height: 2.25rem;
+    display: grid;
+    place-items: center;
+  }
+  .controllerValue {
+    width: 2rem;
+    font-size: .9rem;
+    font-weight: 500;
+  }
+  .demoContainer {
+    display: grid;
+    place-items: center;
+  }
+  .demoElementWrapper {
+    width: 10%;
+  }
+  .demoElement {
+    width: 100%;
+    max-width: 6rem;
+    aspect-ratio: 1/1;
+    border-radius: .5rem;
+    background-color: var(--font-blue);
+    @supports not (aspect-ratio: 1/1) {
+      padding-top: 50%;
+    }
+  }
+}
+
+.microanimation {
+  .starContainerList {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .5rem;
+  }
+  .starContainer {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    &:before {
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 150%;
+      height: 150%;
+    }
+  }
+  .starBgContainer, .starHoverContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .starBgContainer {
+    z-index: 1;
+  }
+  .starHoverContainer {
+    z-index: 5;
+  }
+  .dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: .5rem;
+    background-color: var(--bg-tertiary);
+  }
+  .starHover, .starActive {
+    display: grid;
+    place-items: center;
+    transition: color .3s ease;
+    color: var(--font-blue);
+  }
+  .starRed {
+    color: var(--tint-red) !important;
+  }
+  .starOrange {
+    color: var(--tint-orange) !important;
+  }
+  .starYellow {
+    color: var(--tint-yellow) !important
+  }
+  .starGreen {
+    color: var(--tint-green) !important
   }
 }

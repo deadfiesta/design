@@ -1,9 +1,9 @@
 import Examples from '../../../styles/Examples.module.scss'
-import { BiHappy, BiCool, BiShocked, BiConfused, BiBasketball, BiBowlingBall, BiBall, BiFootball, BiTennisBall } from 'react-icons/bi'
+import { BiExpand, BiLoaderAlt, BiTransfer, BiAdjust, BiHappy, BiCool, BiShocked, BiConfused, BiBasketball, BiBowlingBall, BiBall, BiFootball, BiTennisBall } from 'react-icons/bi'
 import { useState, useEffect, useRef } from 'react'
 import { animated, useSpring, useTransition, useTrail } from 'react-spring'
 
-const MenuOpen = () => {
+const MenuOpen = ({ changeBall, changeEmoji }) => {
   const [emoji, setEmoji] = useState(false)
   const [ball, setBall] = useState(false)
 
@@ -14,7 +14,7 @@ const MenuOpen = () => {
 
   const subMenuConfig = { mass: .25, tension: 280, friction: 12 }
 
-  const EMOJIS = [<BiHappy />, <BiCool />, <BiShocked />, <BiConfused />]
+  const EMOJIS = [<BiTransfer />, <BiExpand />, <BiLoaderAlt />, <BiAdjust />]
 
   const [emojiDefault, setEmojiDefault] = useState(0)
   const [emojiOne, setEmojiOne] = useState(1)
@@ -72,7 +72,7 @@ const MenuOpen = () => {
     3: 1,
     4: 1,
     5: 1,
-    config: { friction: 15 }
+    config: { friction: 14, tension: 240, mass: .5 }
   }))
 
   const basketAnim = useSpring({
@@ -127,6 +127,7 @@ const MenuOpen = () => {
   const ballClick = (target) => {
     const currentDefault = ballDefault
     const current = target.getAttribute("ball")
+    setBallDefault(current)
     const slot = target.getAttribute("slot").toString()
     switch (slot) {
       case "1":
@@ -145,7 +146,6 @@ const MenuOpen = () => {
         setBallThree(currentDefault)
         api.start({ 4: 1, reset: true })
     }
-    setBallDefault(current)
     api.start({ 5: 1, reset: true })
     target.setAttribute("ball", currentDefault)
   }
@@ -156,6 +156,26 @@ const MenuOpen = () => {
     bgPrimary.current = getComputedStyle(document.body).getPropertyValue('--bg-primary')
     bgTertiary.current = getComputedStyle(document.body).getPropertyValue('--bg-tertiary')
   })
+
+  useEffect(() => {
+    changeBall(ballDefault)
+  }, [ballDefault])
+
+  useEffect(() => {
+    switch (emojiDefault) {
+      case "0":
+        changeEmoji("translate")
+        break
+      case "1":
+        changeEmoji("scale")
+        break
+      case "2":
+        changeEmoji("rotate")
+        break
+      case "3":
+        changeEmoji("opacity")
+    }
+  }, [emojiDefault])
 
   return (
     <div className={`${Examples.example} ${Examples.menu}`}>
@@ -215,7 +235,7 @@ const MenuOpen = () => {
                       opacity: (props[i + 1]).to(n => n)
                     }}>
                       <animated.div className={Examples.menuSvg} style={{
-                        transform: (transform).to((y, r) => `rotate(${(r * .125 * i + 202.5)*-1}deg)`)
+                        transform: (transform).to((y, r) => `rotate(${(r * .125 * i + 202.5) * -1}deg)`)
                       }}>
                         {balls.slice(1)[i]}
                       </animated.div>
@@ -223,26 +243,6 @@ const MenuOpen = () => {
                   </animated.div>
                 </li>
               ))}
-              {/* <li className={Examples.subMenuItem} >
-              <animated.div style={bowlingAnim} className={Examples.bowling}>
-                <BiBowlingBall size={28} />
-              </animated.div>
-            </li>
-            <li className={Examples.subMenuItem} >
-              <animated.div style={biAnim} className={Examples.bi}>
-                <BiBall size={28} />
-              </animated.div>
-            </li>
-            <li className={Examples.subMenuItem} >
-              <animated.div style={footballAnim} className={Examples.football}>
-                <BiFootball size={28} />
-              </animated.div>
-            </li>
-            <li className={Examples.subMenuItem} >
-              <animated.div style={tennisAnim} className={Examples.tennisball}>
-                <BiTennisBall size={28} />
-              </animated.div>
-            </li> */}
             </animated.ul>
           ))}
         </li>

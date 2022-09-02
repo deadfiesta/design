@@ -1,7 +1,7 @@
 import React from 'react'
 import Motion from '../../styles/Motion.module.scss'
 
-const WhySpring = ({ id, title, description, example }) => {
+const WhySpring = ({ id, title, description, example, label }) => {
   return (
     <div id={id} className={Motion.principle} >
       <div className={Motion.textContainer}>
@@ -12,6 +12,9 @@ const WhySpring = ({ id, title, description, example }) => {
       </div>
       <div className={Motion.exampleContainer}>
         {example}
+        <div className={Motion.exampleLabel}>
+          {label}
+        </div>
       </div>
     </div>
   )

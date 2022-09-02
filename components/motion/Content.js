@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react'
+
 import Motion from '../../styles/Motion.module.scss'
 import Header from '../motion/Header'
 import Section from '../motion/Section'
@@ -5,13 +7,25 @@ import Section from '../motion/Section'
 import Principle from '../motion/Principle'
 import SpinnerCircle from './components/SpinnerCircle'
 import SwitchLightDark from './components/SwitchLightDark'
+import MenuOpen from './components/MenuOpenSampleCrazy'
 //Why Spring 
 import WhySpring from './WhySpring'
-import MenuOpen from './components/MenuOpenSampleCrazy'
+import SpringPropsDemo from './components/SpringPropsDemo'
+//Animation Types
+
+
 import BestPractice from './BestPractice'
+import Microanimation from './components/Microanimation'
 
 
 const Content = () => {
+
+  const [ball, setBall] = useState('')
+  const [emoji, setEmoji] = useState('translate')
+
+  useEffect(()=> {
+    console.log(emoji)
+  }, [ball, setBall, emoji, setEmoji])
 
   return (
     <div className={Motion.motion}>
@@ -38,7 +52,7 @@ const Content = () => {
           id="assistive"
           title="Assistive"
           paragraph="Motion plays a supportive role of enhancing and improving usability. Motion is primarily implemented to provide context and communicates feedback to the user. Assistive motion reduces cognitive load and minimise mental effort to use a product."
-          example={<MenuOpen />}
+          example={<MenuOpen changeEmoji={setEmoji} changeBall={setBall} />}
           label={"Interactive: Simple Menu"} />
       </Section>
       <Section
@@ -60,7 +74,9 @@ const Content = () => {
                 Click <a rel="noreferrer" href="https://www.digitalocean.com/community/tutorials/react-intro-to-react-spring" target="_blank">here</a> to learn about React Spring framework
               </p>
             </>
-          } />
+          }
+          example={<SpringPropsDemo type={emoji} />}
+          label={"Spring Props"}/>
       </Section>
       <Section
         id="types"
@@ -69,25 +85,25 @@ const Content = () => {
           id="microinteraction"
           title="Microinteraction"
           paragraph="Micro-interaction animation is a small functional animation that triggers a visual feedback immediately upon an action."
-          example={<SpinnerCircle />}
+          example={<Microanimation />}
           label={"Loop Demo: Spinner (Indeterminate)"} />
         <Principle
           id="loading"
           title="Loading and Progress"
           paragraph="Loading and progress animation informs the user through visual representation of where they are in the process and what&apos;s happening. Loading animation assures the user that the content is still being loaded despite the page looking empty."
-          example={<SpinnerCircle />}
+
           label={"Loop Demo: Spinner (Indeterminate)"} />
         <Principle
           id="state"
           title="State Change"
           paragraph="State change animation eases the sudden and abrupt UI change by creating a visual link and spatial relationship from its initial state to final state."
-          example={<SpinnerCircle />}
+
           label={"Loop Demo: Spinner (Indeterminate)"} />
         <Principle
           id="structure"
           title="Structure and Navigation"
           paragraph="Navigational animation shows where the user is currently at by providing context through movements."
-          example={<SpinnerCircle />}
+
           label={"Loop Demo: Spinner (Indeterminate)"} />
       </Section>
       <Section
