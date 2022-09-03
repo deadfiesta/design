@@ -186,8 +186,8 @@ const Microanimation = () => {
     <div className={`${Examples.example} ${Examples.microanimation}`}>
       <div className={Examples.starCentering}>
         <ul className={Examples.starContainerList} style={{ zIndex: 10, pointerEvents: 'none', width: activeWidth }}>
-          {STARS.map((star, i) => clickedOn !== 0 && (
-            <div key={`key${i}`}>
+          {STARS.map((star, i, key) => clickedOn !== 0 && (
+            <div key={`key${i}${key}`}>
               {star.transit(({ transform, opacity }, item, key) => item && (
                 <li key={`${i}${key}`}>
                   <div className={Examples.starActiveContainer} >
@@ -205,7 +205,7 @@ const Microanimation = () => {
         </ul>
         <ul ref={width} className={Examples.starContainerList}>
           {starTrail.map(({ transform, opacity }, i, key) => (
-            <li key={`${i}${key}`}>
+            <li key={`${i}trailing${key}`}>
               <StarHover hover={hoveredOn} clicked={clickedOn} setClick={setClickedOn} setHover={setHoveredOn} star={i + 1} />
             </li>
           ))}
