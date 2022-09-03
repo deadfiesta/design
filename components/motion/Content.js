@@ -7,7 +7,7 @@ import Section from '../motion/Section'
 import Principle from '../motion/Principle'
 import SpinnerCircle from './components/SpinnerCircle'
 import SwitchLightDark from './components/SwitchLightDark'
-import MenuOpen from './components/MenuOpenSampleCrazy'
+import MenuOpen from './components/MenuOpenSample'
 //Why Spring 
 import WhySpring from './WhySpring'
 import SpringPropsDemo from './components/SpringPropsDemo'
