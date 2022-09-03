@@ -7,7 +7,7 @@ import Section from '../motion/Section'
 import Principle from '../motion/Principle'
 import SpinnerCircle from './components/SpinnerCircle'
 import SwitchLightDark from './components/SwitchLightDark'
-import MenuOpen from './components/SpringPropsDemo'
+import MenuOpen from './components/MenuOpenSampleCrazy'
 //Why Spring 
 import WhySpring from './WhySpring'
 import SpringPropsDemo from './components/SpringPropsDemo'
@@ -15,7 +15,7 @@ import SpringPropsDemo from './components/SpringPropsDemo'
 
 
 import BestPractice from './BestPractice'
-import Microanimation from './components/SpringPropsDemo'
+import Microanimation from './components/Microanimation'
 
 
 const Content = () => {

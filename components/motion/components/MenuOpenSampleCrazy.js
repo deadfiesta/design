@@ -179,74 +179,7 @@ const MenuOpen = ({ changeBall, changeEmoji }) => {
 
   return (
     <div className={`${Examples.example} ${Examples.menu}`}>
-      <ul className={Examples.menuContainer}>
-        <animated.li style={hoverAnim} className={`${Examples.menuItem} ${Examples.menuOne}`}>
-          <animated.div style={{
-            ...happyAnim,
-            transform: (props[0].to(a => `scale(${a})`)),
-          }} className={Examples.innerMenuItem} onClick={handleEmojiClick} >
-            {EMOJIS[emojiDefault]}
-          </animated.div>
-          {emojiTransitions(({ scale }, emoji) => emoji && (
-            <animated.ul className={Examples.subMenuContainer} style={{
-              transform: (scale).to(s => `scale(${s})`)
-            }}>
-              {emojiTrail.map(({ t, opacity }, i, key) => (
-                <li key={`${key}trailing`} className={Examples.subMenuItem} slot={i + 1} emoji={i + 1} onClick={(e) => emojiClick(e.currentTarget)} >
-                  <animated.div style={{
-                    opacity: opacity,
-                    transform: (t).to((y, r) => `rotate(${r * .135 * (emojis.slice(1).length - i)}deg) translateY(${y}px)`),
-                  }}>
-                    <animated.div className={Examples.gridCenter} style={{
-                      transform: (props[i + 1]).to(n => `scale(${n})`),
-                      opacity: (props[i + 1]).to(n => n)
-                    }}>
-                      <animated.div className={Examples.menuSvg} style={{
-                        transform: (t).to((y, r) => `rotate(-${r * .135 * (emojis.slice(1).length - i)}deg)`)
-                      }}>
-                        {emojis.slice(1)[i]}
-                      </animated.div>
-                    </animated.div>
-                  </animated.div>
-                </li>
-              ))}
-            </animated.ul>
-          ))}
-        </animated.li>
-        <li className={`${Examples.menuItem} ${Examples.menuTwo}`}>
-          <animated.div className={Examples.innerMenuItem} onClick={handleBallClick} style={{
-            ...basketAnim,
-            transform: (props[5].to(a => `scale(${a})`)),
-          }} >
-            {BALLS[ballDefault]}
-          </animated.div>
-          {ballTransitions(({ scale }, ball) => ball && (
-            <animated.ul className={Examples.subMenuContainer} style={{
-              transform: (scale).to(s => `scale(${s})`)
-            }}>
-              {ballTrail.map(({ transform, opacity }, i, key) => (
-                <li key={`${key}balling`} className={Examples.subMenuItem} slot={i + 1} ball={i + 1} onClick={(e) => ballClick(e.currentTarget)} >
-                  <animated.div style={{
-                    opacity: opacity,
-                    transform: (transform).to((y, r) => `rotate(${r * .125 * i + 202.5}deg) translateY(${y}px)`)
-                  }}>
-                    <animated.div className={Examples.gridCenter} style={{
-                      transform: (props[i + 1]).to(n => `scale(${n})`),
-                      opacity: (props[i + 1]).to(n => n)
-                    }}>
-                      <animated.div className={Examples.menuSvg} style={{
-                        transform: (transform).to((y, r) => `rotate(${(r * .125 * i + 202.5) * -1}deg)`)
-                      }}>
-                        {balls.slice(1)[i]}
-                      </animated.div>
-                    </animated.div>
-                  </animated.div>
-                </li>
-              ))}
-            </animated.ul>
-          ))}
-        </li>
-      </ul>
+      
     </div>
   )
 }
