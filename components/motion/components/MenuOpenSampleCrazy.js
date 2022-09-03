@@ -220,12 +220,12 @@ const MenuOpen = ({ changeBall, changeEmoji }) => {
           }} >
             {BALLS[ballDefault]}
           </animated.div>
-          {ballTransitions(({ scale }, ball, key) => ball && (
-            <animated.ul key={key} className={Examples.subMenuContainer} style={{
+          {ballTransitions(({ scale }, ball, key, i) => ball && (
+            <animated.ul key={`${key}${i}`} className={Examples.subMenuContainer} style={{
               transform: (scale).to(s => `scale(${s})`)
             }}>
               {ballTrail.map(({ transform, opacity }, i, key) => (
-                <li key={`${key}balling`} className={Examples.subMenuItem} slot={i + 1} ball={i + 1} onClick={(e) => ballClick(e.currentTarget)} >
+                <li key={`${key}${i}`} className={Examples.subMenuItem} slot={i + 1} ball={i + 1} onClick={(e) => ballClick(e.currentTarget)} >
                   <animated.div style={{
                     opacity: opacity,
                     transform: (transform).to((y, r) => `rotate(${r * .125 * i + 202.5}deg) translateY(${y}px)`)
