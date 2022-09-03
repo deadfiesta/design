@@ -187,8 +187,8 @@ const MenuOpen = ({ changeBall, changeEmoji }) => {
           }} className={Examples.innerMenuItem} onClick={handleEmojiClick} >
             {EMOJIS[emojiDefault]}
           </animated.div>
-          {emojiTransitions(({ scale }, emoji, key) => emoji && (
-            <animated.ul key={key} className={Examples.subMenuContainer} style={{
+          {emojiTransitions(({ scale }, emoji, key, i) => emoji && (
+            <animated.ul key={`${key}${i}`} className={Examples.subMenuContainer} style={{
               transform: (scale).to(s => `scale(${s})`)
             }}>
               {emojiTrail.map(({ t, opacity }, i, key) => (
