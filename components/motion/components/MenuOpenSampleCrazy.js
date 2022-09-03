@@ -187,11 +187,11 @@ const MenuOpen = ({ changeBall, changeEmoji }) => {
           }} className={Examples.innerMenuItem} onClick={handleEmojiClick} >
             {EMOJIS[emojiDefault]}
           </animated.div>
-          {emojiTransitions(({ scale }, emoji, key, i) => emoji && (
+          {/* {emojiTransitions(({ scale }, emoji, key, i) => emoji && (
             <animated.ul key={`${key}${i}`} className={Examples.subMenuContainer} style={{
               transform: (scale).to(s => `scale(${s})`)
             }}>
-              {/* {emojiTrail.map(({ t, opacity }, i, key) => (
+              {emojiTrail.map(({ t, opacity }, i, key) => (
                 <li key={`${key}`} className={Examples.subMenuItem} slot={i + 1} emoji={i + 1} onClick={(e) => emojiClick(e.currentTarget)} >
                   <animated.div style={{
                     opacity: opacity,
@@ -209,9 +209,9 @@ const MenuOpen = ({ changeBall, changeEmoji }) => {
                     </animated.div>
                   </animated.div>
                 </li>
-              ))} */}
+              ))}
             </animated.ul>
-          ))}
+          ))} */}
         </animated.li>
         <li className={`${Examples.menuItem} ${Examples.menuTwo}`}>
           <animated.div className={Examples.innerMenuItem} onClick={handleBallClick} style={{
