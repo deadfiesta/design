@@ -81,8 +81,8 @@ const SpringPropsDemo = ({ type }) => {
     <div className={`${Examples.example} ${Examples.springDemo}`}>
       <div className={Examples.controllerContainer}>
         <ul className={Examples.controllerOptionList}>
-          {springOptions.map((option, i) => (
-            <li key={`${option}${i}`} className={Examples.controllerOption}>
+          {springOptions.map((option, i, key) => (
+            <li key={`${key}${i}`} className={Examples.controllerOption}>
               <div className={Examples.controllerIconContainer}>
                 <animated.div style={{
                   transform: (option.scale).to(n => `scale(${n})`)
