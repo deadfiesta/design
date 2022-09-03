@@ -191,8 +191,8 @@ const MenuOpen = ({ changeBall, changeEmoji }) => {
             <animated.ul className={Examples.subMenuContainer} style={{
               transform: (scale).to(s => `scale(${s})`)
             }}>
-              {emojiTrail.map(({ t, opacity }, i) => (
-                <li key={`${i}trailing`} className={Examples.subMenuItem} slot={i + 1} emoji={i + 1} onClick={(e) => emojiClick(e.currentTarget)} >
+              {emojiTrail.map(({ t, opacity }, i, key) => (
+                <li key={`${key}trailing`} className={Examples.subMenuItem} slot={i + 1} emoji={i + 1} onClick={(e) => emojiClick(e.currentTarget)} >
                   <animated.div style={{
                     opacity: opacity,
                     transform: (t).to((y, r) => `rotate(${r * .135 * (emojis.slice(1).length - i)}deg) translateY(${y}px)`),
@@ -224,8 +224,8 @@ const MenuOpen = ({ changeBall, changeEmoji }) => {
             <animated.ul className={Examples.subMenuContainer} style={{
               transform: (scale).to(s => `scale(${s})`)
             }}>
-              {ballTrail.map(({ transform, opacity }, i) => (
-                <li key={`${i}balling`} className={Examples.subMenuItem} slot={i + 1} ball={i + 1} onClick={(e) => ballClick(e.currentTarget)} >
+              {ballTrail.map(({ transform, opacity }, i, key) => (
+                <li key={`${key}balling`} className={Examples.subMenuItem} slot={i + 1} ball={i + 1} onClick={(e) => ballClick(e.currentTarget)} >
                   <animated.div style={{
                     opacity: opacity,
                     transform: (transform).to((y, r) => `rotate(${r * .125 * i + 202.5}deg) translateY(${y}px)`)
