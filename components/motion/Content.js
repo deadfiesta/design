@@ -15,7 +15,7 @@ import SpringPropsDemo from './components/SpringPropsDemo'
 
 
 import BestPractice from './BestPractice'
-import Microanimation from './components/Microanimation'
+import Microanimation from './components/SpringPropsDemo'
 
 
 const Content = () => {
