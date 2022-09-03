@@ -159,7 +159,7 @@ const MenuOpen = ({ changeBall, changeEmoji }) => {
 
   useEffect(() => {
     changeBall(ballDefault)
-  }, [ballDefault])
+  }, [ballDefault, changeBall])
 
   useEffect(() => {
     switch (emojiDefault) {
@@ -175,7 +175,7 @@ const MenuOpen = ({ changeBall, changeEmoji }) => {
       case "3":
         changeEmoji("opacity")
     }
-  }, [emojiDefault])
+  }, [emojiDefault, changeEmoji])
 
   return (
     <div className={`${Examples.example} ${Examples.menu}`}>
