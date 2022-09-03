@@ -191,7 +191,7 @@ const MenuOpen = ({ changeBall, changeEmoji }) => {
             <animated.ul key={`${key}${i}`} className={Examples.subMenuContainer} style={{
               transform: (scale).to(s => `scale(${s})`)
             }}>
-              {emojiTrail.map(({ t, opacity }, i, key) => (
+              {/* {emojiTrail.map(({ t, opacity }, i, key) => (
                 <li key={`${key}`} className={Examples.subMenuItem} slot={i + 1} emoji={i + 1} onClick={(e) => emojiClick(e.currentTarget)} >
                   <animated.div style={{
                     opacity: opacity,
@@ -209,7 +209,7 @@ const MenuOpen = ({ changeBall, changeEmoji }) => {
                     </animated.div>
                   </animated.div>
                 </li>
-              ))}
+              ))} */}
             </animated.ul>
           ))}
         </animated.li>
@@ -220,7 +220,7 @@ const MenuOpen = ({ changeBall, changeEmoji }) => {
           }} >
             {BALLS[ballDefault]}
           </animated.div>
-          {ballTransitions(({ scale }, ball, key, i) => ball && (
+          {/* {ballTransitions(({ scale }, ball, key, i) => ball && (
             <animated.ul key={`${key}${i}`} className={Examples.subMenuContainer} style={{
               transform: (scale).to(s => `scale(${s})`)
             }}>
@@ -244,7 +244,7 @@ const MenuOpen = ({ changeBall, changeEmoji }) => {
                 </li>
               ))}
             </animated.ul>
-          ))}
+          ))} */}
         </li>
       </ul>
     </div>
